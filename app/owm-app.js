@@ -1,7 +1,6 @@
-angular.module('OWMApp', ['ngRoute'])
+angular.module('OWMApp', ['ngRoute', 'ngAnimate'])
 	.value('owmCities',
 		['New York', 'Dallas', 'Chicago', 'Boston'])
-
 
 	.config(function($routeProvider){
 		$routeProvider
@@ -30,8 +29,6 @@ angular.module('OWMApp', ['ngRoute'])
 			redirectTo: '/error'
 		});
 	})
-
-
 	// intercepting the routing event with root scope
 	.run(function($rootScope, $location, $timeout){
 		$rootScope.$on('$routeChangeError', function(){
